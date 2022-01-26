@@ -1,0 +1,63 @@
+[
+{
+  "a": {
+    "latitude": 36.564,
+    "longitude": 127.001,
+    "aqi": 30,
+    "name": "서울 A 위치"
+  },
+  "b": {
+    "latitude": 36.567,
+    "longitude": 127,
+    "aqi": 40,
+    "name": "서울 B 위치"
+  },
+  "price": 10020
+},
+{
+  "a": {
+    "latitude": 37.123,
+    "longitude": 129.01,
+    "aqi": 90,
+    "name": "서울 A 위치"
+  },
+  "b": {
+    "latitude": 35.562,
+    "longitude": 127.123,
+    "aqi": 72,
+    "name": "서울 B 위치"
+  },
+  "price": 20420.33
+},
+{
+  "a": {
+    "latitude": 32.524,
+    "longitude": 125.231,
+    "aqi": 120,
+    "name": "서울 A 위치"
+  },
+  "b": {
+    "latitude": 34.562,
+    "longitude": 124.123,
+    "aqi": 75,
+    "name": "서울 B 위치"
+  },
+  "price": 18050.33
+},
+{
+  "a": {
+    "latitude": 37.524,
+    "longitude": 115.231,
+    "aqi": 110,
+    "name": "서울 A 위치"
+  },
+  "b": {
+    "latitude": 34.542,
+    "longitude": 154.113,
+    "aqi": 65,
+    "name": "서울 B 위치"
+  },
+  "price": 20300
+}
+]
+
