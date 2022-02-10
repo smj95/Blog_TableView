@@ -8,7 +8,9 @@
 import UIKit
 
 class HeaderTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
