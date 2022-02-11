@@ -109,7 +109,6 @@
 				0447BBB6EBA73CE975B2D1F5 /* Pods-TableView.debug.xcconfig */,
 				E23C7370439F5E2135A9AE0B /* Pods-TableView.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

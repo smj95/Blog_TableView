@@ -9,6 +9,18 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var aLati: UILabel!
+    @IBOutlet weak var aLong: UILabel!
+    @IBOutlet weak var aAqi: UILabel!
+    @IBOutlet weak var aAddress: UILabel!
+    
+    @IBOutlet weak var bLati: UILabel!
+    @IBOutlet weak var bLong: UILabel!
+    @IBOutlet weak var bAqi: UILabel!
+    @IBOutlet weak var bAddress: UILabel!
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

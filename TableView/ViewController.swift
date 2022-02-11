@@ -32,20 +32,26 @@ class ViewController: UIViewController {
         if let data = data, let result = try?decoder.decode(JSON.self, from: data){
             self.dataArray = result
             self.tableViewCount = self.dataArray.count
-            
             print(self.dataArray)
-            print(tableViewCount)
         }
         self.mainTableView.register(UINib(nibName: "HeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HeaderTableViewCell")
         self.mainTableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "MainTableViewCell")
-    }
+        }
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tableViewCount + 1
     }
-
+    
+    func setAdata(value : String, title: String, result: JSON) -> String{
+        "\(title) : \(result["a"]["\(value)"].stringValue)"
+    }
+    
+//    func setBdata(value : String, title: String, result: JSON) -> String{
+//        "\(title) : \(result["b"]["\(value)"].stringValue)"
+//    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell", for: indexPath) as? HeaderTableViewCell{
@@ -54,7 +60,27 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
                 return cell
             }
         }else{
-            
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell{
+                let Latitude = "latitude"
+                let Longitude = "longitude"
+                let Aqi = "aqi"
+                let Name = "name"
+                
+                let result = self.dataArray[indexPath.row - 1]
+                
+                cell.aLati.text = setAdata(value: Latitude, title: "위도", result: result)
+                cell.aLong.text = setAdata(value: Longitude, title: "경도", result: result)
+                cell.aAqi.text = setAdata(value: Aqi, title: "공기 퀄리티", result: result)
+                cell.aAddress.text = setAdata(value: Name, title: "위치 정보", result: result)
+                
+                cell.bLati.text = "위도 : \(result["b"]["latitude"].stringValue)"
+                cell.bLong.text = "경도 : \(result["b"]["longitude"].stringValue)"
+                cell.bAqi.text = "공기 퀄리티 : \(result["b"]["aqi"].stringValue)"
+                cell.bAddress.text = "위치 정보 : \(result["b"]["name"].stringValue)"
+                
+                cell.priceLabel.text = "Price : \(self.dataArray[(indexPath.row) - 1]["price"].stringValue)"
+                return cell
+            }
         }
         return UITableViewCell()
     }
@@ -67,3 +93,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
         }
     }
 }
+
+
+
